@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #032A49;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.kistyak.registrationwin.SignInController">
+    <children>
+        <AnchorPane layoutY="75.0" prefHeight="325.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="233.0" layoutY="108.0" text="Hello there!" textFill="#404040">
+               <font>
+                  <Font name="Calibri" size="48.0" />
+               </font>
+            </Label>
+         </children>
+        </AnchorPane>
+        <Label layoutX="225.0" layoutY="14.0" text="Registration App" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="36.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
