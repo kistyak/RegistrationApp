@@ -42,6 +42,28 @@ public class SignUpController {
 
     @FXML
     void initialize() {
+        SignUpButton.setOnAction(event -> {
+            signUpNewUser();
+        });
+    }
+
+    private void signUpNewUser() {
+        DataBaseHandler dbHandler =  new DataBaseHandler();
+
+        String firstName = NameField.getText();
+        String lastName = SurnameField.getText();
+        String userName = SignUpLoginField.getText();
+        String password = SignUpPasswordField.getText();
+        String location = CountryField.getText();
+        String gender = "";
+        if(RudioButtonMale.isSelected())
+            gender = "Male";
+        else
+            gender = "Female";
+
+        Users user = new Users(firstName, lastName, userName, password, location, gender);
+
+        dbHandler.signUpUser(user);
 
     }
 
