@@ -1,11 +1,16 @@
 package net.kistyak.registrationwin;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class HelloController {
 
@@ -29,12 +34,39 @@ public class HelloController {
 
     @FXML
     void initialize() {
+
         SignInButton.setOnAction(event -> {
-            System.out.println("All works!");
+            String loginText = LoginField.getText().trim();
+            String passText = PasswordField.getText().trim();
+
+            if(!loginText.equals("") && !passText.equals("")){
+                loginUser(loginText, passText);
+            }
+            else
+                System.out.println("Empty field");
         });
+
         SignUpButton.setOnAction(event -> {
-            System.out.println("All works!");
+            SignUpButton.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sign_up.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         });
+    }
+
+    private void loginUser(String loginText, String passText) {
+
     }
 
 }
