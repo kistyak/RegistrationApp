@@ -3,10 +3,7 @@ package net.kistyak.registrationwin;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class SignUpController {
 
@@ -42,6 +39,10 @@ public class SignUpController {
 
     @FXML
     void initialize() {
+        ToggleGroup tg = new ToggleGroup();
+        RudioButtonMale.setToggleGroup(tg);
+        RudioButtonFemale.setToggleGroup(tg);
+
         SignUpButton.setOnAction(event -> {
             signUpNewUser();
         });
